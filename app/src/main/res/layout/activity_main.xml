@@ -59,16 +59,17 @@
                 android:layout_marginTop="30dp"/>
 
             <ImageView
+                android:id="@+id/shop_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/shop_img"
-                android:layout_below="@id/news_button"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/rev_round"
-                android:layout_marginTop="150dp"
+                android:layout_below="@id/news_button"
                 android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/rev_round"
+                android:onClick="onClick" />
 
             <Button
                 android:id="@+id/shop_button"
@@ -96,27 +97,29 @@
                 android:layout_marginStart="20dp"/>
 
             <ImageView
+                android:id="@+id/about_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/about_img"
-                android:layout_below="@id/shop_button"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:background="@drawable/coffee_cup"
+                android:layout_below="@id/shop_button"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="150dp"/>
+                android:layout_marginTop="150dp"
+                android:background="@drawable/coffee_cup"
+                android:onClick="onClick" />
 
             <Button
                 android:id="@+id/about_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_about"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignTop="@id/about_img"
                 android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"
+                android:background="@drawable/button_about"
+                android:onClick="onClick" />
 
             <TextView
                 android:layout_width="150dp"

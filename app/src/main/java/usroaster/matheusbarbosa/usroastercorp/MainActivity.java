@@ -20,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent( this, NewsActivity.class );
             startActivity( intent );
         }
-        else if( sender.getId( ) == R.id.shop_button ) {
+        else if( sender.getId( ) == R.id.shop_button || sender.getId( ) == R.id.shop_img ) {
             Uri uri = Uri.parse( "http://www.usroastercorp.com" );
             Intent intent = new Intent( Intent.ACTION_VIEW, uri );
+            startActivity( intent );
+        }
+        else if( sender.getId( ) == R.id.about_button || sender.getId( ) == R.id.about_img ) {
+            Intent intent = new Intent( this, AboutActivity.class );
             startActivity( intent );
         }
     }
