@@ -3,4 +3,5 @@
     <string name="news_text">Learn about new technologies, products, coffee shows, roasting classes and more</string>
     <string name="shop_text">Browse our selection of coffee machinery, from roasters to grinders, cyclones, and custom attachments</string>
     <string name="about_text">Learn about our history, our teams, our goals and our facilities</string>
+    <string name="title_activity_shopping">ShoppingActivity</string>
 </resources>

@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="usroaster.matheusbarbosa.usroastercorp.NewsActivity"
-    android:background="@color/colorPrimaryDark">
+    tools:context="usroaster.matheusbarbosa.usroastercorp.ShopActivity"
+    android:background="@drawable/rev_front2">
 
     <ListView
-        android:id="@+id/news_list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rev_front2"
-        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/shop_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="8dp"
         android:divider="@drawable/custom_divider"
         android:dividerHeight="2dp"/>
