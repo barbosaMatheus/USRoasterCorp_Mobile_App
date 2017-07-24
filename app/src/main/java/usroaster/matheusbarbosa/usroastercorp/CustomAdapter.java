@@ -7,21 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 public class CustomAdapter extends BaseAdapter {
     private String names[];
-    private String descrpitions[];
+    private String descriptions[];
     private static LayoutInflater inflater = null;
     private Context context;
 
     public CustomAdapter( Context context, String n[], String d[] ) {
         this.names = n;
-        this.descrpitions = d;
+        this.descriptions = d;
         inflater = ( LayoutInflater ) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
         this.context = context;
     }
@@ -65,7 +60,7 @@ public class CustomAdapter extends BaseAdapter {
             holder = ( Holder ) oldview.getTag( );
         }
         holder.product_name.setText( names[pos] );
-        holder.description.setText( descrpitions[pos] );
+        holder.description.setText( descriptions[pos] );
         holder.price.setText( get_price( pos ) );
         holder.button.setOnClickListener( new View.OnClickListener( ) {
             @Override
