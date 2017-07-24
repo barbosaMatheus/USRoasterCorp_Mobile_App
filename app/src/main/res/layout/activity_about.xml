@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="usroaster.matheusbarbosa.usroastercorp.AboutActivity"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/wood">
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
         android:id="@+id/about_list"
-        android:background="@drawable/wood"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         android:divider="@drawable/custom_divider"

@@ -1,5 +1,6 @@
 package usroaster.matheusbarbosa.usroastercorp;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,12 +13,17 @@ import java.util.ArrayList;
 
 public class AboutActivity extends AppCompatActivity {
 
+    public ArrayList<Integer> cart_id_list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        //noinspection ConstantConditions
         getSupportActionBar( ).setTitle( "US Roaster Corp - About Us" );
         setup_list( );
+        fill_cart_list( );
+        if( cart_id_list == null ) cart_id_list = new ArrayList<>( );
     }
 
     public void setup_list( ) {
@@ -93,5 +99,24 @@ public class AboutActivity extends AppCompatActivity {
     public void show_message( String title, String msg ) {
         AlertDialog.Builder builder = new AlertDialog.Builder( this, android.R.style.Theme_Holo_Dialog_NoActionBar );
         builder.setTitle( title ).setMessage( msg ).setPositiveButton( "Ok", null ).setIcon( R.drawable.coffee_grain ).show( );
+    }
+
+    public void fill_cart_list( ) {
+        Intent intent;
+        try{
+            intent = getIntent( );
+        } catch( NullPointerException e ) {
+            cart_id_list = new ArrayList<>( );
+            return;
+        }
+        cart_id_list = intent.getIntegerArrayListExtra( "id_list" );
+    }
+
+    @Override
+    public void onBackPressed( ) {
+        Intent intent = new Intent( );
+        intent.putIntegerArrayListExtra( "id_list", cart_id_list );
+        setResult( RESULT_OK, intent );
+        super.onBackPressed( );
     }
 }

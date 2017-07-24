@@ -1,5 +1,6 @@
 package usroaster.matheusbarbosa.usroastercorp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,12 +18,17 @@ import java.util.Map;
 
 public class NewsActivity extends AppCompatActivity {
 
+    public ArrayList<Integer> cart_id_list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         fill_list( );
+        //noinspection ConstantConditions
         getSupportActionBar( ).setTitle( "US Roaster Corp - News" );
+        fill_cart_list( );
+        if( cart_id_list == null ) cart_id_list = new ArrayList<>( );
     }
 
     public  void fill_list( ) {
@@ -47,16 +53,27 @@ public class NewsActivity extends AppCompatActivity {
             data.add( dat );
         }
         SimpleAdapter adapter = new SimpleAdapter( this, data, R.layout.list_row,
-                                                   new String[] {"title","subtitle"}, new int[] {R.id.title,R.id.subtitle} )/* {
-            @Override
-            public View getView( int position, View convert_view, ViewGroup parent ) {
-                View view = super.getView( position, convert_view, parent );
-                ( ( TextView ) findViewById( android.R.id.text1 ) ).setTextColor( Color.WHITE );
-                ( ( TextView ) findViewById( android.R.id.text2 ) ).setTextColor( Color.WHITE );
-                return view;
-            }
-        }*/;
+                                                   new String[] {"title","subtitle"}, new int[] {R.id.title,R.id.subtitle} );
         ListView list = ( ListView ) findViewById( R.id.news_list );
         list.setAdapter( adapter );
+    }
+
+    public void fill_cart_list( ) {
+        Intent intent;
+        try{
+            intent = getIntent( );
+        } catch( NullPointerException e ) {
+            cart_id_list = new ArrayList<>( );
+            return;
+        }
+        cart_id_list = intent.getIntegerArrayListExtra( "id_list" );
+    }
+
+    @Override
+    public void onBackPressed( ) {
+        Intent intent = new Intent( );
+        intent.putIntegerArrayListExtra( "id_list", cart_id_list );
+        setResult( RESULT_OK, intent );
+        super.onBackPressed( );
     }
 }

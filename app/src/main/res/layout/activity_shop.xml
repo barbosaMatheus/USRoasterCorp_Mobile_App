@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="usroaster.matheusbarbosa.usroastercorp.ShopActivity"
-    android:background="@drawable/rev_front2">
+    android:background="@drawable/wood">
 
     <ListView
         android:id="@+id/shop_list"
