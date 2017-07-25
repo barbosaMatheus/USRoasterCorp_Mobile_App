@@ -9,16 +9,16 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:background="@drawable/rev_front2"
         android:layout_centerHorizontal="true"
-        android:fillViewport="true">
+        android:background="@drawable/rev_front2"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/news_img"
@@ -49,14 +49,14 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/news_button"
-                android:text="@string/news_text"
-                android:textColor="@android:color/white"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/news_button"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"
+                android:text="@string/news_text"
+                android:textColor="@android:color/white" />
 
             <ImageView
                 android:id="@+id/shop_img"
@@ -84,28 +84,17 @@
                 android:background="@drawable/button_shop"
                 android:onClick="onClick" />
 
-            <Button
-                android:id="@+id/cart_button"
-                android:layout_width="70dp"
-                android:layout_height="31dp"
-                android:layout_alignTop="@id/shop_button"
-                android:layout_marginTop="5dp"
-                android:layout_toEndOf="@id/shop_button"
-                android:layout_toRightOf="@id/shop_button"
-                android:background="@drawable/button_cart"
-                android:onClick="onClick" />
-
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/shop_text"
-                android:layout_below="@id/shop_button"
-                android:textColor="@android:color/white"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginTop="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/shop_button"
                 android:layout_marginLeft="20dp"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/shop_text"
+                android:textColor="@android:color/white" />
 
             <ImageView
                 android:id="@+id/about_img"
@@ -135,14 +124,14 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/about_button"
-                android:text="@string/about_text"
-                android:textColor="@android:color/white"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/about_button"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"
+                android:text="@string/about_text"
+                android:textColor="@android:color/white" />
 
         </RelativeLayout>
     </ScrollView>

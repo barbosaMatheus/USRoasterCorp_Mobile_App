@@ -33,7 +33,7 @@ public class CartActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu( Menu menu ) {
-        menu.add( Menu.NONE, 0, Menu.NONE, "Checkout" ).setIcon( R.drawable.shopping_cart ).setShowAsAction( MenuItem.SHOW_AS_ACTION_ALWAYS );
+        menu.add( Menu.NONE, 0, Menu.NONE, "Checkout" ).setShowAsAction( MenuItem.SHOW_AS_ACTION_ALWAYS );
         return true;
     }
 
