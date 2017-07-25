@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ShopActivity extends AppCompatActivity {
 
     public ArrayList<Integer> cart_id_list;
+    public ArrayList<String> curr_names;
+    public ArrayList<String> curr_descriptions;
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
@@ -39,7 +43,11 @@ public class ShopActivity extends AppCompatActivity {
                                  "Electric plate grinder.",
                                  "Electric plate grinder.",
                                  "Electric plate grinder." };
-        CustomAdapter adapter = new CustomAdapter( this, product_names, descriptions );
+        curr_descriptions = new ArrayList<>( );
+        curr_names = new ArrayList<>( );
+        curr_descriptions.addAll( Arrays.asList( descriptions ) );
+        curr_names.addAll( Arrays.asList( product_names ) );
+        CustomAdapter adapter = new CustomAdapter( this, curr_names, curr_descriptions, false );
         ( ( ListView ) findViewById( R.id.shop_list ) ).setAdapter( adapter );
     }
 

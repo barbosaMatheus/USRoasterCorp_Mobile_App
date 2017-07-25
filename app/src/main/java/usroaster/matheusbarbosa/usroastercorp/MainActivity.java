@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra( "id_list", cart_id_list );
             startActivityForResult( intent, 2 );
         }
+        else if( sender.getId( ) == R.id.cart_button ) {
+            Intent intent = new Intent( this, CartActivity.class );
+            intent.putExtra( "id_list", cart_id_list );
+            startActivityForResult( intent, 3 );
+        }
     }
 
     @Override
