@@ -3,6 +3,8 @@ package usroaster.matheusbarbosa.usroastercorp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +29,21 @@ public class CartActivity extends AppCompatActivity {
             return;
         }
         fill_list( );
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu( Menu menu ) {
+        menu.add( Menu.NONE, 0, Menu.NONE, "Checkout" ).setIcon( R.drawable.shopping_cart ).setShowAsAction( MenuItem.SHOW_AS_ACTION_ALWAYS );
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item ) {
+        if( cart_id_list.size( ) < 1 ) return true;
+        if( item.getTitle( ) ==  "Checkout" ) {
+            Toast.makeText( this, "Checkout clicked", Toast.LENGTH_SHORT ).show( );
+        }
+        return true;
     }
 
     public void fill_cart_list( ) {
